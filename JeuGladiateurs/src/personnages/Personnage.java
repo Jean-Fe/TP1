@@ -1,6 +1,7 @@
 package personnages;
 
 import java.util.Random;
+import java.util.Set;
 
 public class Personnage {
 
@@ -106,8 +107,7 @@ public class Personnage {
         
     }
 
-    public int attaqueCalcul() {
-        // TODO : Retourner la valeur de l'attaque du personnage.
+    private int attaqueCalcul() {
         Random rand = new Random();
 
     int minValue = 0;
@@ -120,6 +120,17 @@ public class Personnage {
         // TODO : Récupérer la valeur d'attaque pour ce tour, calculer les dégats,
         //modifier les points de vie du personnage cible, afficher les détails
         // sur l'attaque, tel que montré dans l'énoncé.
+        int forceDeFrappe=attaqueCalcul();
+        int valeurDefense=personnageCible.getValeurDefense();
+        int dommages=forceDeFrappe-valeurDefense;
+        if (dommages<0) dommages=0; 
+        System.out.println("");
+        System.out.println(nom +" attaque avec une puissance de : "+ forceDeFrappe);
+        System.out.println(personnageCible.getNom() +" a une defense de  : "+ valeurDefense);
+        System.out.println("Les dommages sont donc de : "+dommages);
+        personnageCible.setPointsDeVie(personnageCible.getPointsDeVie()-dommages);
+        
+        
     }
 
     public void setNewInitiativeRandom() {
