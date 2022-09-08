@@ -57,6 +57,7 @@ public class JeuGladiateurs {
         affichage.afficherSeparateurDeTour();
         } while (personnage1.getPointsDeVie()>0 && personnage2.getPointsDeVie()>0);
     // TODO : Après la boucle, afficher le résultat du combat
+    affichage.afficheVictoire(personnage1, personnage2);
     // </editor-fold>
     }
 
