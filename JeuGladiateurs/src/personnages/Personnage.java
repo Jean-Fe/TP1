@@ -1,7 +1,7 @@
 package personnages;
 
 import java.util.Random;
-import java.util.Set;
+
 
 public class Personnage {
 
@@ -96,7 +96,7 @@ public class Personnage {
     public void afficherInfosPersonnage() {
         
         System.out.println("");
-        System.out.println(nom);
+        System.out.println(nom); 
         System.out.println("    Attaque : "+ valeurMaxAttaque);
         System.out.println("    Defense : "+valeurDefense);
         System.out.println("    Points de vie : "+ pointsDeVie);
