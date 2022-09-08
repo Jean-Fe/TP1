@@ -36,6 +36,9 @@ public class AffichageEcran {
         if (personnage1.getPointsDeVie()>0) {
             gagnant=personnage1;
         }
+        else if(personnage1.getPointsDeVie()==0&& personnage2.getPointsDeVie()==0){
+         System.out.println("Les deux combattants ont péri");
+        }
         else{
             gagnant=personnage2;
     }
