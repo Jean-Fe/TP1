@@ -23,7 +23,7 @@ public class Personnage {
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Constructeurs et initialisation">
     public Personnage(String nom, int attaqueMax, int defense, int pvs, int ini) {
-        // TODO : Constructeur AVEC paramètres
+
         this.nom=nom;
         valeurMaxAttaque=attaqueMax;
         valeurDefense=defense;
