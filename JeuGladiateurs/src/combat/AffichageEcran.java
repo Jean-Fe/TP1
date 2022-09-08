@@ -18,7 +18,6 @@ public class AffichageEcran {
     }
     
     public void afficherSeparateurDeTour() {
-        // TODO : Afficher un retour à la ligne, suivi d'une ligne d'astérisques, tel que montré dans l'énoncé
         System.out.println("");
         System.out.println("**************************************");
         
@@ -36,15 +35,17 @@ public class AffichageEcran {
         if (personnage1.getPointsDeVie()>0) {
             gagnant=personnage1;
         }
-        else if(personnage1.getPointsDeVie()==0&& personnage2.getPointsDeVie()==0){
-         System.out.println("Les deux combattants ont péri");
-        }
         else{
             gagnant=personnage2;
     }
+        if(personnage1.getPointsDeVie()==0&& personnage2.getPointsDeVie()==0){
+         System.out.println("Les deux combattants ont péri");
+        }
+        else{
         System.out.println("");
         System.out.println(gagnant.getNom() +" gagne le combat !!!");
         System.out.println("");
+        }
     }
     // </editor-fold>
 }
