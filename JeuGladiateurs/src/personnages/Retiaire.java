@@ -13,7 +13,7 @@ import java.util.Random;
 public class Retiaire extends Personnage{
     
     String classe;
-    Boolean isfiletLancer;
+    Boolean isFiletLancer;
     
     public Retiaire(String nom, int attaqueMax, int defense, int pvs, int ini) {
         
@@ -23,7 +23,7 @@ public class Retiaire extends Personnage{
         pointsDeVie=pvs;
         initiative=ini;
         classe="Retiaire";
-        isfiletLancer=false;
+        isFiletLancer=false;
     }
 
     public Retiaire() {
@@ -33,21 +33,22 @@ public class Retiaire extends Personnage{
         pointsDeVie=0;
         initiative=0;
         classe="Retiaire";
-        isfiletLancer=false;
+        isFiletLancer=false;
     }
     
     @Override
     public void frapperPersonnage(Personnage personnageCible) {
         
-        if (!isfiletLancer) {
+        System.out.println("");
+        if (!isFiletLancer) {
             System.out.println(this.getNom()+ " lance son filet");
-            
+            isFiletLancer=true;
                  Random rand = new Random();
 
                     int minValue = 1;
                     int maxValue = 100;
                     if((rand.nextInt(maxValue - minValue) + minValue)<11){
-                        System.out.println("Son filet attrape  "+ personnageCible.getNom()+ "et il l'empale sauvagement avec la lance !");
+                        System.out.println("Son filet attrape  "+ personnageCible.getNom()+ "et l'empale sauvagement avec la lance !");
                         personnageCible.setPointsDeVie(0);
                     }
                     else{
@@ -58,6 +59,7 @@ public class Retiaire extends Personnage{
         }
         else{
             System.out.println(this.getNom()+" ramasse son filet et en profite pour attaquer");
+            isFiletLancer=false;
             super.frapperPersonnage(personnageCible);
         }        
         
