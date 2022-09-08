@@ -70,6 +70,7 @@ public class Personnage {
 
     public void setPointsDeVie(int pointsDeVie) {
         this.pointsDeVie = pointsDeVie;
+        if(this.pointsDeVie<0) this.pointsDeVie=0;
     }
 
     public void setValeurMaxAttaque(int valeurMaxAttaque) {
