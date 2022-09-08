@@ -28,7 +28,6 @@ public class JeuGladiateurs {
     
     affichage.afficherDebutCombat();
     
-   
     // </editor-fold>
 
         
