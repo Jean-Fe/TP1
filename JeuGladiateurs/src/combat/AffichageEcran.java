@@ -41,6 +41,7 @@ public class AffichageEcran {
     }
         System.out.println("");
         System.out.println(gagnant.getNom() +" gagne le combat !!!");
+        System.out.println("");
     }
     // </editor-fold>
 }
