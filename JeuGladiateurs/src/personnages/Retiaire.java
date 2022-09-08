@@ -1,0 +1,65 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package personnages;
+
+import java.util.Random;
+
+/**
+ *
+ * @author ETI
+ */
+public class Retiaire extends Personnage{
+    
+    String classe;
+    Boolean isfiletLancer;
+    
+    public Retiaire(String nom, int attaqueMax, int defense, int pvs, int ini) {
+        
+        this.nom=nom;
+        valeurMaxAttaque=attaqueMax;
+        valeurDefense=defense;
+        pointsDeVie=pvs;
+        initiative=ini;
+        classe="Retiaire";
+        isfiletLancer=false;
+    }
+
+    public Retiaire() {
+        nom="";
+        valeurMaxAttaque=0;
+        valeurDefense=0;
+        pointsDeVie=0;
+        initiative=0;
+        classe="Retiaire";
+        isfiletLancer=false;
+    }
+    
+    @Override
+    public void frapperPersonnage(Personnage personnageCible) {
+        
+        if (!isfiletLancer) {
+            System.out.println(this.getNom()+ " lance son filet");
+            
+                 Random rand = new Random();
+
+                    int minValue = 1;
+                    int maxValue = 100;
+                    if((rand.nextInt(maxValue - minValue) + minValue)<11){
+                        System.out.println("Son filet attrape  "+ personnageCible.getNom()+ "et il l'empale sauvagement avec la lance !");
+                        personnageCible.setPointsDeVie(0);
+                    }
+                    else{
+                        System.out.println("Le filet n'atteint pas sa cible");
+                    }
+                    
+                    
+        }
+        else{
+            System.out.println(this.getNom()+" ramasse son filet et en profite pour attaquer");
+            super.frapperPersonnage(personnageCible);
+        }        
+        
+    }
+}
