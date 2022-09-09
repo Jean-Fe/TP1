@@ -37,6 +37,13 @@ public class Retiaire extends Personnage{
     }
     
     @Override
+    public void afficherInfosPersonnage(){
+        
+        super.afficherInfosPersonnage();
+        System.out.println("    Classe : "+ classe);
+        }
+    
+    @Override
     public void frapperPersonnage(Personnage personnageCible) {
         
         System.out.println("");
